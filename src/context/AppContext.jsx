@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 const AppContext = createContext();
 
-const API_URL = "https://server-xi-coral-63.vercel.app";
+const API_URL = import.meta.env.PROD 
+  ? "https://server-xi-coral-63.vercel.app"
+  : "http://localhost:5000";
 
 export function AppProvider({ children }) {
   // State variables for the admin dashboard
